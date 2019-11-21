@@ -29,16 +29,17 @@ public class Principal {
                 switch (opcion) {
                     case 1: {
                         System.out.println("Ingrese tipo {M} OR [A] ");
-                        String tipo = teclado.next();
-                        if (tipo == "M") {
+                        String tipo = teclado.next().toUpperCase();
+                        System.out.println("'" + tipo + "'");
+                        if ("M".equalsIgnoreCase(tipo)) {
                             Motocicleta motocicleta = new Motocicleta();
                             // rellenar datos
                             est.agregar(motocicleta);
                             System.out.println("Ingrese patente");
                             patente = teclado.next();
                             motocicleta.setPatente(patente);
-                            
-                        } else if (tipo == "a") {
+
+                        } else if ("A".equalsIgnoreCase(tipo)) {
                             Automovil auto = new Automovil();
                             // rellenar datos
                             System.out.println("Ingrese patente");
@@ -46,10 +47,7 @@ public class Principal {
                         } else {
                             System.out.println("Ingrese un tipo valido");
                         }
-                        {
-
                             break;
-                        }
                     }
                     case 2: {
 
